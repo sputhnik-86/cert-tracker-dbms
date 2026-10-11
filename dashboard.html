@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - CertTrack</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header"><i class="fas fa-shield-alt" style="color: var(--primary);"></i> CertTrack</div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item active"><i class="fas fa-th-large"></i> Dashboard</a>
+      <a href="employee-forms.html" class="nav-item"><i class="fas fa-user-plus"></i> Add Record</a>
+      <a href="index.html" class="nav-item" style="margin-top:auto"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </nav>
+  </aside>
+  <div class="main-wrapper">
+    <header class="topbar"><div style="font-weight:500;color:var(--text-muted)">CertTrack / Dashboard</div><div style="display:flex;align-items:center;gap:15px"><div style="width:40px;height:40px;border-radius:50%;background:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:600">HR</div></div></header>
+    <main class="content">
+      <div class="page-header"><div><h1 style="font-size:1.75rem;margin-bottom:8px">Certification Dashboard</h1><p style="color:var(--text-muted)">Monitor employee certification compliance.</p></div><a href="employee-forms.html" class="btn-primary"><i class="fas fa-plus"></i> Add Certification</a></div>
+      <div class="stats-grid">
+        <div class="card stat-card"><p>Total Certifications</p><h2 id="stat-total">—</h2></div>
+        <div class="card stat-card"><p>Valid</p><h2 id="stat-valid">—</h2></div>
+        <div class="card stat-card"><p>Expiring Soon</p><h2 id="stat-warning">—</h2></div>
+        <div class="card stat-card"><p>Expired</p><h2 id="stat-expired">—</h2></div>
+      </div>
+      <div class="card">
+        <div class="page-header"><div><h2>Certification Records</h2><p style="color:var(--text-muted)">Records are loaded from the shared cloud database.</p></div><input id="searchInput" type="search" placeholder="Search records..." aria-label="Search certification records"></div>
+        <div style="overflow-x:auto"><table><thead><tr><th>Employee</th><th>Location / Department</th><th>Certification</th><th>Expiry Date</th><th>Status</th><th>Actions</th></tr></thead><tbody id="certTableBody"><tr><td colspan="6">Loading records...</td></tr></tbody></table></div>
+        <p id="dashboard-error" role="alert" style="color:var(--danger-text);margin-top:12px"></p>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
